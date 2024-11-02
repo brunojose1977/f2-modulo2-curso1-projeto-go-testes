@@ -20,6 +20,6 @@ jobs:
               SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
               REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
               REMOTE_USER: ${{ secrets.REMOTE_USER }}
-              TARGET: ${{ secrets.REMOTE_TARGET }}
-              EXCLUDE: "/dist/, /node_modules/"    
+              TARGET: /home/${{ secrets.REMOTE_USER }}
+              EXCLUDE: "postgres-data"
               
