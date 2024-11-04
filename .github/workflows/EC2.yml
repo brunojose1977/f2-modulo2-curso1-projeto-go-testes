@@ -11,7 +11,7 @@ jobs:
     - name: Download a Build Artifact
       uses: actions/download-artifact@v3.0.0
       with:
-    # Artifact name
+        # Artifact name
         name: programa
     - uses: actions/checkout@v3
     
@@ -23,3 +23,11 @@ jobs:
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
         TARGET: /home/${{ secrets.REMOTE_USER }}
         EXCLUDE: "postgres-data"
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.1.0
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: COLOCAR-AQUI-O-MEU-SCRIPT
