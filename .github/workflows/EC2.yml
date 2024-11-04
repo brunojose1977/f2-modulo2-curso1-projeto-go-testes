@@ -30,4 +30,10 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        script: COLOCAR-AQUI-O-MEU-SCRIPT
+        script: | 
+           export HOST=${{ secrets.REMOTE_HOST }}
+           export USER=${{ secrets.REMOTE_USER }}
+           export PASSWORD=${{ secrets.REMOTE_DBPASSWORD }}
+           export DBNAME=${{ secrets.REMOTE_DBNAME }}
+           export PORT={{ secrets.REMOTE_DBPORT }}
+        
