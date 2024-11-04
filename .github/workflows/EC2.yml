@@ -35,5 +35,6 @@ jobs:
            export USER=${{ secrets.REMOTE_USER }}
            export PASSWORD=${{ secrets.REMOTE_DBPASSWORD }}
            export DBNAME=${{ secrets.REMOTE_DBNAME }}
-           export PORT={{ secrets.REMOTE_DBPORT }}
+           export DBPORT={{ secrets.REMOTE_DBPORT }}
+           export PORT={{ secrets.REMOTE_GOPORT }}
         
