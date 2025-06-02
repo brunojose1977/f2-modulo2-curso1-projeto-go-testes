@@ -37,5 +37,4 @@ jobs:
            export DBNAME=${{ secrets.REMOTE_DBNAME }}
            export DBPORT={{ secrets.REMOTE_DBPORT }}
            export PORT=8000
-           //export PORT={{ secrets.REMOTE_GOPORT }}
         
