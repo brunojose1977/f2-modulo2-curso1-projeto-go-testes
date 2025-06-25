@@ -17,8 +17,8 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        TARGET: ${{ secrets.REMOTE_TARGET }}
-        EXCLUDE: "/dist/, /node_modules/"
+        TARGET: /home/${{ secrets.REMOTE_USER }}
+        EXCLUDE: "/dist/, /node_modules/,postgres-data"
 
     - name: Download a Build Artifact
       uses: actions/download-artifact@v3.0.0
