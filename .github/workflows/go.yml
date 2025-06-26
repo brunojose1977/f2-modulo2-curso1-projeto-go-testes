@@ -18,8 +18,8 @@ jobs:
       DBNAME: root
     strategy:
       matrix:
-        go_version: ['1.18', '1.17', '>=1.18']
-        os: ['ubuntu-latest', 'ubuntu-18.04']
+        go_version: ['stable'] # Ou você pode especificar a versão mais recente, como '1.22.x' se for o caso
+        os: ['ubuntu-latest']
     steps:
     - uses: actions/checkout@v3
 
