@@ -21,6 +21,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        REMOTE_PORT: ${{ secrets.SSH_PORT }}
         TARGET: /home/${{ secrets.REMOTE_USER }}
         EXCLUDE: "postgres-data"
 
@@ -30,5 +31,10 @@ jobs:
         host: ${{ secrets.REMOTE_HOST }}
         username: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22
-        script: whoami
+        port: ${{ secrets.SSH_PORT }}
+        script: |
+          EXPORT HOST = {{ secrets.$REMOTE_HOST }}
+          EXPORT USER = {{ secrets.$REMOTE_USER }}
+          EXPORT PASSWORD = {{ secrets.$REMOTE_PASSAWORD }}
+          EXPORT DBNAME = {{ secrets.$REMOTE_DBNAME }}
+          EXPORT DBPORT = {{ secrets.$REMOTE_DBPORT }}
