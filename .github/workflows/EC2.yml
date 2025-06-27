@@ -36,5 +36,8 @@ jobs:
           EXPORT HOST = {{ secrets.$REMOTE_HOST }}
           EXPORT USER = {{ secrets.$REMOTE_USER }}
           EXPORT PASSWORD = {{ secrets.$REMOTE_PASSAWORD }}
-          EXPORT DBNAME = {{ secrets.$REMOTE_DBNAME }}
-          EXPORT DBPORT = {{ secrets.$REMOTE_DBPORT }}
+          EXPORT DBNAME = {{ secrets.$DBNAME }}
+          EXPORT DBPORT = {{ secrets.$DBPORT }}
+          EXPORT DBHOST = {{ secrets.$DBHOST }}
+          EXPORT DBUSER = {{ secrets.$DBUSER }}
+          EXPORT DBPASSWORD = {{ secrets.$DBPASSAWORD }}          
